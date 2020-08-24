@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+
+      
+      body{
+        background-color: #f58d42;
+      }
+
+	.btncontainer{
+		text-align: center;
+	}
+
+	
+      #rollbtn {
+        outline: none;
+        border: none;
+	background-color: #e6db4c;
+
+	font-size: 2em;
+
+	padding-left: 50px;
+	padding-right: 50px;
+	border-radius: 10px;
+	font-family: Tahoma;
+	color: #de8837;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+
+      }
+
+	#result {
+		text-align: center;
+		font-size: 400px;
+		color: white;
+		
+	}
+
+      
+
+    </style>
+
+  </head>
+
+  <body>
+
+
+    <div class="btncontainer">
+      <button id="rollbtn">Roll</button>
+    </div>
+
+    <div id="result"></div>
+
+
+
+    <script>
+
+      
+      
+      var btn = document.getElementById("rollbtn");
+
+      btn.addEventListener("click", function(){
+
+
+        var list = ["&#9856;", "&#9857;", "&#9858;", "&#9859;", "&#9860;", "&#9861;"];
+
+
+        //0 to 5
+	var num = Math.floor(Math.random() * 6);
+
+        document.getElementById("result").innerHTML = list[num];
+	
+	//play sound
+	var audio = new Audio("roll.mp3");
+	audio.play();
+	
+
+      });
+
+
+    </script>
+
+  </body>
+
+
+</html>
